@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static%}
+    <link rel="stylesheet"href="{% static 'style.css' %}">
+    
+    <title>Index</title>
+</head>
+<body>
+  <div class="logo">ROSE</div>
+<h1>hey welcome to my project <br>{{feature.name}}</h1>
+  <div class="container">
+    {% if user.is_authenticated%}
+    <h1>welcome,{{user.username}}</h1>
+    {% else%}
+    <h3>One page bootstrap</h3>
+    {% endif %}
+      
+    <p>{{feature.details}}</p>
+    <h2>{{feature2.details}}</h2>
+    <h2>{{feature2.name}}</h2>
+    <h2>{{feature3.name}}</h2>
+    <h2>{{feature3.details}}</h2>
+    <h2>{{feature4.name}}</h2>
+    <h2>{{feature4.details}}</h2>
+    <textarea>{{feature.id}}</textarea>
+    <p class="description">{{feature.details}}</p
+      <p>This feature is true</p>
+      <p>This feature is false</p>
+      {% if user.is_authenticated %}
+      <li><a href="logout">logout</a></li>
+      {% else %}
+      <li><a href="login">login or signup</a></li>
+      {% endif %}
+      
+  </div>
+</body>
+</html>
